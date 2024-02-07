@@ -200,6 +200,7 @@ require('lazy').setup({
     },
   },
 
+ --[[ 
   {
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
@@ -208,11 +209,16 @@ require('lazy').setup({
     config = function()
       require('onedark').setup {
         -- Set a style preset. 'dark' is default.
-        style = 'dark', -- dark, darker, cool, deep, warm, warmer, light
+        style = 'darker', -- dark, darker, cool, deep, warm, warmer, light
       }
       require('onedark').load()
     end,
   },
+  --]]
+  
+  {"bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+
+
 
   {
     -- Set lualine as statusline
@@ -679,6 +685,11 @@ cmp.setup {
     { name = 'path' },
   },
 }
+
+
+vim.g.moonflyNormalFloat = true
+vim.g.moonflyWinSeparator = 0
+
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
